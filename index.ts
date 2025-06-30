@@ -17,10 +17,12 @@ async function fetchUsers(): Promise<void> {
 const users = await response.json() as User[];
 
     console.log(`Fetched ${users.length} users:\n`);
+console.log(`✅ User List:`);  // 👈 Add this line here
 
-    users.forEach((user) => {
-      console.log(`👤 ${user.name} - 📧 ${user.email}`);
-    });
+users.forEach((user) => {
+  console.log(`👤 ${user.name} - 📧 ${user.email}`);
+});
+
 
   } catch (error) {
     console.error('Error fetching users:', error);
